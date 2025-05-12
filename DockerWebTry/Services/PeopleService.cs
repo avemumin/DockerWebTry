@@ -7,11 +7,16 @@ public class PeopleService : IPeopleService
 {
   public async Task<IEnumerable<People>> GetAsync()
   {
-    var peoples = Peoples(); ;
+    var peoples = Peoples();
 
     return peoples;
   }
 
+  public async Task<People> GetByIdAsync(int id)
+  {
+    var peoples = Peoples().FirstOrDefault(x => x.Id == id);
+    return peoples;
+  }
   private List<People> Peoples()
   {
     var people = new List<People>

@@ -23,4 +23,10 @@ public class PeopleController : ControllerBase
     return Ok(result);
   }
 
+  [HttpGet("{id}")]
+  public async Task<IActionResult> GetById([FromRoute]int id)
+  {
+    var result = await _peopleService.GetByIdAsync(id);
+    return Ok(result);
+  }
 }
