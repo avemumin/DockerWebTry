@@ -1,0 +1,6 @@
+@DockerWebTry_HostAddress = http://localhost:5136
+
+GET {{DockerWebTry_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
